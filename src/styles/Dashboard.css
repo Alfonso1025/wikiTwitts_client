@@ -1,0 +1,55 @@
+ 
+.wrapper-dashboard{
+    width: 100vw;
+    height: 100vh;
+    padding: 40px;
+    background-color: rgb(246, 246, 252)
+}
+.header-dashboard{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.h1-username{
+text-transform: capitalize;
+
+}
+
+.wrapper-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    margin-top: 3.5rem;
+
+}
+.button-dashboard{
+
+    opacity: 0.8;
+    background-color: rgb(166, 166, 240);;
+    padding: 20px;
+    color: rgb(19, 17, 17);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: large;
+   
+
+}
+.button-logout{
+    opacity: 0.8;
+    background-color: rgb(166, 166, 240);;
+    color: rgb(19, 17, 17);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: large;
+    padding: 20px;
+   
+}
+.link-dashboard{
+    text-decoration: none;
+    color: rgb(19, 17, 17)
+}
+  
