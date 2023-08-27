@@ -21,10 +21,13 @@ const SignUp= (props)=>{
            body:JSON.stringify(body)
 
         })
-        const newUser= await response.json()
-        console.log(newUser)
-        localStorage.setItem("token",newUser.data)
-        setIsAuthenticated(true)
+        const parseResponse= await response.json()
+        console.log(parseResponse)
+        if(parseResponse.code === 200){
+            localStorage.setItem("token",parseResponse.data)
+            setIsAuthenticated(true)
+        }
+        
         
     } 
     catch (error) {

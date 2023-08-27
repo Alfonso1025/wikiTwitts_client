@@ -22,17 +22,18 @@ console.log(isAutheticated)
 //send the token to the isveried route in the server
 
 const isVerified= async()=>{
+
 try {
+  console.log('this is the token',localStorage.token)
+  
   const response= await fetch(`${remoteServer}/users/isverified`,{
     method:'GET',
     headers:{token:localStorage.token}
   })
-  //the response is a boolean
-  //if there was a token sent to the authorization middleware
-  //the server return true otherwise returns false
-  const verified=await response.json()
-  console.log('this is verified',verified)
-  verified===true ? setIsAuthenticated(true) : setIsAuthenticated(false)
+ 
+  const parseResponse = await response.json()
+  console.log(parseResponse)
+  parseResponse.data === true ? setIsAuthenticated(true) : setIsAuthenticated(false)
 
 } catch (err) {
   console.log(err)

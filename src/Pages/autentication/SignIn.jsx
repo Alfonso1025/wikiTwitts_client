@@ -23,9 +23,14 @@ try {
     body:JSON.stringify(body)
     })
 
-    const loggedUser=await response.json()
-    localStorage.setItem("token",loggedUser.data)
-    setIsAuthticated(true)
+    const parseResponse=await response.json()
+    console.log(parseResponse)
+    if(parseResponse.code === 200){
+        console.log('user authenticated setting token to local storage')
+        localStorage.setItem("token", parseResponse.data)
+        setIsAuthticated(true)
+    }
+   
     
 } 
 catch (error) {
